@@ -21,15 +21,6 @@ SOFTWARE.
 
 ;(function() {
   'use strict';
-  var root = this;
-
-  if(typeof Promise === 'undefined' && typeof require !== 'undefined') {
-    try {
-      Promise = require('bluebird');
-    } catch(ignored) {
-    }
-  }
- 
   /**
    * @param {?T|undefined} value
    * @template T
@@ -153,7 +144,7 @@ SOFTWARE.
      exports = OptionalHolder;
    }
   } else {
-    root['Optional'] = OptionalHolder;
+    this['Optional'] = OptionalHolder;
   }
 }).call(this);
 
