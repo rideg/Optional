@@ -79,7 +79,7 @@ SOFTWARE.
 
   /**
    * @template T
-   * @param {function(!T}:void}
+   * @param {function(!T):void} callback
    */
   Optional.prototype.ifPresent = function(callback) {
     if(this.value_ != null) {
@@ -88,9 +88,8 @@ SOFTWARE.
   };
 
   /** 
-   * @template T
-   * @template V
-   * @param {function(!T): V}
+   * @template T, V
+   * @param {function(!T): V} mapper
    */
   Optional.prototype.map = function(mapper) {
     if(this.value_ == null) {
