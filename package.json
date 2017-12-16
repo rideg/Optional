@@ -1,0 +1,15 @@
+{
+  "name": "optionaljs",
+  "version": "1.0.0",
+  "description": "Simple optional implementation for JavaScript.",
+  "main": "optional.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [
+    "Optional",
+    "Maybe"
+  ],
+  "author": "Sandor Rideg",
+  "license": "MIT"
+}
