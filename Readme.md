@@ -11,11 +11,11 @@ The library supports both Node.js and browser environments.
    npm install Optional --save
    ```
  * Browser:
- ```html
+   ```html
    <script src="https://raw.githubusercontent.com/rideg/Optional/v1.0.0/optional.min.js" 
            type="text/javascript">
    </script>
- ```
+   ```
 
 Usage
 ======
