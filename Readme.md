@@ -7,9 +7,15 @@ Installation
 The library supports both Node.js and browser environments.
 
  * Node:
+   ```shell
    npm install Optional --save
+   ```
  * Browser:
-   <script src="https://raw.githubusercontent.com/rideg/Optional/v1.0.0/optional.min.js" type="text/javascript"></script> 
+ ```html
+   <script src="https://raw.githubusercontent.com/rideg/Optional/v1.0.0/optional.min.js" 
+           type="text/javascript">
+   </script>
+ ```
 
 Usage
 ======
