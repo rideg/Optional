@@ -1,3 +1,4 @@
+/*jshint esnext:true */
 const Optional = require('../optional.js');
 
 

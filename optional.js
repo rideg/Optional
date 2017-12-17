@@ -19,9 +19,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-/*global Promise, exports:true, module:true */
 (function () {
-
     'use strict';
     /**
      * @param {?T|undefined} value
