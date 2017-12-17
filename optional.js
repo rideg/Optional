@@ -77,8 +77,7 @@ SOFTWARE.
         }
     };
 
-    var ABSENT = Object.seal(new Optional(null)),
-        OptionalHolder = Object.create(null);
+    var ABSENT = Object.seal(new Optional(null));
 
     /** 
      * @template T, V
@@ -116,6 +115,7 @@ SOFTWARE.
         return 'Optional[\'' + this.value + '\']';
     };
 
+    var OptionalHolder = Object.create(null);
 
     /**
      * @template T
