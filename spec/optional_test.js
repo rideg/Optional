@@ -12,6 +12,12 @@ describe('optional', () => {
      it('creates absent from indefined', () => {
        expect(Optional.of(undefined)).toEqual(Optional.absent());
      });
+
+     it('returns the same object if absent', () => {
+       expect(Optional.absent()).toBe(Optional.of(null));
+       expect(Optional.absent()).toBe(Optional.of(undefined));
+       expect(Optional.absent()).toBe(Optional.of());
+     });
    });
 
    describe('get', () => {

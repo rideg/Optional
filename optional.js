@@ -123,6 +123,9 @@ SOFTWARE.
      * @return !Optional<T>
      */
     OptionalHolder.of = function (value) {
+        if (value === null || value === undefined) {
+            return ABSENT;
+        }
         return Object.seal(new Optional(value));
     };
 
