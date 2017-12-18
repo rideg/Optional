@@ -22,7 +22,7 @@ Usage
 When using with Node.js you need to import the library first:
 
 ```javascript
-const Optional = require('optionaljs');
+const Optional = require('optional2');
 ```
 In the browser, the initialization script creates the global Optional object which can be used later on.
 
