@@ -8,7 +8,7 @@ The library supports both Node.js and browser environments.
 
  * Node:
    ```shell
-   npm install Optional --save
+   npm install optional2 --save
    ```
  * Browser:
    ```html
