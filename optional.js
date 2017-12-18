@@ -69,6 +69,15 @@ SOFTWARE.
 
     /**
      * @template T
+     * @param {function():!T}
+     * @return {!T}
+     */
+    Optional.prototype.orElseGet = function (supplier) {
+        return this.isPresent() ? this.value : supplier();
+    };
+
+    /**
+     * @template T
      * @param {function(!T):void} callback
      */
     Optional.prototype.ifPresent = function (callback) {

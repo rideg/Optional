@@ -86,6 +86,16 @@ Optional.of('value').get(); // => "value"
 Optional.absent().get();    // => Error('Value is absent') will be thrown.
 ```
 
+Default values
+--------------
+If the value is absent, there are multiple ways to supply defaults. 
+
+```javascript
+Optional.absent().orElse('value'); // => "value"
+
+Optional.absent().orElseGet(() => 'value') // => "value"
+```
+
 Mapping
 -------
 The optional value can be mapped to something else if is present. If it is absent the result will be absent as well.

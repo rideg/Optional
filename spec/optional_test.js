@@ -73,6 +73,16 @@ describe('optional', () => {
      });
   });
 
+  describe('orElseGet', () => {
+    it('returns falue if present', () => {
+      expect(Optional.of('value').orElseGet(() => 'other')).toBe('value');
+    });
+
+    it('returns the supplied value if absent', () => {
+      expect(Optional.absent().orElseGet(() => 'other')).toBe('other');
+    });
+  });
+
   describe('map', () => {
      it('maps if value is present', () => {
        expect(Optional.of('value')
