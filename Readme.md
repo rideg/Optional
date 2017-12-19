@@ -98,13 +98,21 @@ Optional.absent().orElseGet(() => 'value') // => "value"
 
 Mapping
 -------
-The optional value can be mapped to something else if is present. If it is absent the result will be absent as well.
-
+The optional value can be mapped to something else if is present. If it is absent, the result will be absent as well.
 ```javascript
 Optional.of('value').map((value) => value.toUpperCase()).get(); // => "VALUE"
 
 Optional.absent().map((value) => transform(value)).isPresent(); // => false
 ```
+
+Filtering
+---------
+The filter() method returns the instance itself if the value is present and the given predicate succeeds.
+```javascript
+Optional.of(10).filter((value) => value > 5); // => "Optional['10']"
+Optional.of(5).filter((value) => value > 5);  // => "Optional[absent]"
+Optional.absent().filter(() => true);         // => "Optional[absent]"
+``` 
 
 Promise
 -------
@@ -126,7 +134,7 @@ It also has the toString() method:
 ```javascript
 Optional.of('value').toString(); // => "Optional['value']"
 
-Optiona.absent().toString();     // => "Optional[absent]"
+Optional.absent().toString();     // => "Optional[absent]"
 ```
 
 Licence

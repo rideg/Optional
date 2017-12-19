@@ -26,7 +26,8 @@ describe('optional', () => {
       });
       
       it('throws exception if value is absent', () => {
-        expect(() => Optional.absent().get()).toThrow(new Error('Value is absent'));
+        expect(
+          () => Optional.absent().get()).toThrow(new Error('Value is absent'));
       });
    });
 
@@ -83,6 +84,17 @@ describe('optional', () => {
     });
   });
 
+  describe('orElseThrow', () => {
+    it('throws an error if value is absent', () => {
+      const error = new Error('fake');
+      expect(() => Optional.absent().orElseThrow(error)).toThrow(error);
+    });
+
+    it('returs value if it is present', () => {
+      expect(Optional.of('value').orElseThrow('error')).toBe('value');
+    });
+  });
+
   describe('map', () => {
      it('maps if value is present', () => {
        expect(Optional.of('value')
@@ -90,8 +102,25 @@ describe('optional', () => {
      });
 
      it('maps to absent', () => {
-       expect(Optional.absent().map((value) => 'mapped').isPresent()).toBe(false);
+       expect(
+         Optional.absent().map((value) => 'mapped').isPresent()).toBe(false);
      });
+  });
+
+  describe('filter', () => {
+    it('returns absent if predicate fails', () => {
+      expect(Optional.of('value').filter(() => false)).toBe(Optional.absent()); 
+    });
+
+    it('returns absent if value is absent', () => {
+      expect(
+        Optional.absent().filter(() => true)).toBe(Optional.absent());
+    });
+
+    it('returns itself if value is present and perdicate succeeds', () => {
+      const opt = Optional.of('value');
+      expect(opt.filter(() => true)).toBe(opt);
+    });
   });
 
   describe('toString', () => {
@@ -99,7 +128,7 @@ describe('optional', () => {
        expect(Optional.of('value').toString()).toBe('Optional[\'value\']');
      });
 
-     it('prints absetn if absent', () => {
+     it('prints absent if absent', () => {
        expect(Optional.absent().toString()).toBe('Optional[absent]');
      });
   });

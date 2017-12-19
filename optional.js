@@ -26,6 +26,7 @@ SOFTWARE.
      * @template T
      * @constructor
      * @return {!Optional<T>}
+     * @final
      */
     function Optional(value) {
         if (value !== null && value !== undefined) {
@@ -76,6 +77,18 @@ SOFTWARE.
         return this.isPresent() ? this.value : supplier();
     };
 
+    /** 
+     * @template T
+     * @param {!Error}
+     * @return {!T}
+     */
+     Optional.prototype.orElseThrow = function (error) {
+         if (this.isAbsent()) {
+             throw error; 
+         }
+         return this.value;
+     };
+
     /**
      * @template T
      * @param {function(!T):void} callback
@@ -97,6 +110,18 @@ SOFTWARE.
             return ABSENT;
         }
         return Object.seal(new Optional(mapper(this.value)));
+    };
+
+    /** 
+     * @template T
+     * @param {function(T):boolean}
+     * @return Optional<T>
+     */
+    Optional.prototype.filter = function (predicate) {
+        if (this.isPresent() && predicate(this.value)) {
+            return this;
+        }
+        return ABSENT;
     };
 
     // Optional promise interface
