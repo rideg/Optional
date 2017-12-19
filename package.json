@@ -1,13 +1,12 @@
 {
   "name": "optional2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple optional implementation for JavaScript.",
   "repository": "https://github.com/rideg/Optional.git",
   "main": "optional.js",
   "scripts": {
     "test": "jasmine",
-    "minify": 
-    "closure-compiler --language_in ECMASCRIPT5_STRICT --js optional.js --js_output_file optional.min.js",
+    "minify": "closure-compiler --language_in ECMASCRIPT5_STRICT --js optional.js --js_output_file optional.min.js",
     "lint": "jshint --verbose optional.js spec/optional_test.js"
   },
   "keywords": [
