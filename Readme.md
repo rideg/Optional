@@ -12,7 +12,7 @@ The library supports both Node.js and browser environments.
    ```
  * Browser:
    ```html
-   <script src="https://raw.githubusercontent.com/rideg/Optional/v1.0.0/optional.min.js" 
+   <script src="https://raw.githubusercontent.com/rideg/Optional/v1.0.2/optional.min.js" 
            type="text/javascript">
    </script>
    ```

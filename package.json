@@ -1,6 +1,6 @@
 {
   "name": "optional2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple optional implementation for JavaScript.",
   "repository": "https://github.com/rideg/Optional.git",
   "main": "optional.js",
