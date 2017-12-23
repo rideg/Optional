@@ -19,7 +19,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-(function () {
+(function (root) {
     'use strict';
     /**
      * @param {?T|undefined} value
@@ -173,10 +173,10 @@ SOFTWARE.
 
     Object.seal(OptionalHolder);
 
-    if (exports === undefined) {
-        this.Optional = OptionalHolder;
+    if (typeof exports === 'undefined') {
+        root.Optional = OptionalHolder;
     } else {
-        if (module === undefined) {
+        if (typeof module === 'undefined') {
             exports = OptionalHolder;
         } else if (module.exports) {
             exports = module.exports = OptionalHolder;
